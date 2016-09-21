@@ -313,7 +313,7 @@ test_vector "${PLUGIN}" "jmp 0x82" e97d000000
 test_vector "${PLUGIN}" "jmp 2" eb00 
 test_vector "${PLUGIN}" "jmp 3" eb01 
 test_vector "${PLUGIN}" "jmp ecx" ffe1 
-test_vector "${PLUGIN}" "jne 6" 0f8500000000 
+test_vector "${PLUGIN}" "jne 6" 0f8500000000
 test_vector "${PLUGIN}" "jno 2" 0f81fcffffff 
 test_vector "${PLUGIN}" "jno 6" 0f8100000000 
 test_vector "${PLUGIN}" "jnp 2" 0f8bfcffffff 
@@ -327,7 +327,9 @@ test_vector "${PLUGIN}" "jp 2" 0f8afcffffff
 test_vector "${PLUGIN}" "jp 6" 0f8a00000000 
 test_vector "${PLUGIN}" "js 2" 0f88fcffffff 
 test_vector "${PLUGIN}" "js 6" 0f8800000000 
-test_vector "${PLUGIN}" "jz 6" 0f8400000000 
+test_vector "${PLUGIN}" "jz 6" 0f8400000000
+test_vector "${PLUGIN}" "jz short 2" 7400 "br"
+test_vector "${PLUGIN}" "jnz short 2" 7500 "br"
 test_vector "${PLUGIN}" "lahf" 9e "br"
 test_vector "${PLUGIN}" "lar eax, word [eax]" 0f02 "br"
 test_vector "${PLUGIN}" "lcall 0, 0" 9a "br"
